@@ -1,7 +1,7 @@
 # book-management-system
 Postman collection of API's : https://www.getpostman.com/collections/d05b9b7580ae28f9b19e
 
-An online booking order management system
+An online book shopping management system
   Tech stack : 
          JDK Version : JDK 11
          Framework   : Spring Boot
