@@ -16,8 +16,8 @@ public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Long customer_id;
-    private Long book_id;
+    private Long customerId;
+    private Long bookId;
     private Integer quantities;
     @CreationTimestamp
     private LocalDateTime createDateTime;

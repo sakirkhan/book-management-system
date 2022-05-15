@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class CustomerController {
 
@@ -30,14 +32,11 @@ public class CustomerController {
         customer.setEmail(customerDTO.getEmail());
         customer.setPassword(customerDTO.getPassword());
 
-
-        customerRepository.save(customer);
-
-        return new ResponseEntity<>("Customer registered successfully", HttpStatus.OK);
+        return new ResponseEntity<>(customerRepository.save(customer), HttpStatus.OK);
     }
 
     @GetMapping("customer")
-    public String getCustomer(){
-        return "New Customer";
+    public ResponseEntity<List<Customer>> getCustomer(){
+        return new ResponseEntity<>((List<Customer>) customerRepository.findAll(), HttpStatus.OK);
     }
 }
